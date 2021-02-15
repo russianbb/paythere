@@ -3,13 +3,13 @@ version: "3.8"
 services:
   mysql:
     image: mysql:5.7
-    container_name: paga_ai_mysql
+    container_name: paythere_mysql
     environment:
-      - MYSQL_DATABASE=paga_ai
+      - MYSQL_DATABASE=paythere
       - MYSQL_ROOT_PASSWORD=1234
       - MYSQL_ROOT_HOST=%
     volumes:
-      - paga-ai-mysql:/var/lib/mysql
+      - paythere-mysql:/var/lib/mysql
     ports:
       - "3306:3306"
 
@@ -22,7 +22,7 @@ services:
       - "8108:8108"
     depends_on:
       - "mysql"
-    command: bash -c "cd paga-ai && ls && uvicorn main:app --reload --host 0.0.0.0 --port 8108"
+    command: bash -c "cd src && ls && uvicorn main:app --reload --host 0.0.0.0 --port 8108"
 
 volumes:
-  paga-ai-mysql:
+  paythere-mysql:

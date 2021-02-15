@@ -26,7 +26,7 @@ COPY ./requirements/requirements-test.txt /tmp/requirements-test.txt
 RUN pip install -r /tmp/requirements-test.txt
 
 # Install any needed packages specified in requirements.txt
-COPY ./paga-ai/requirements.txt /tmp/requirements.txt
+COPY ./src/requirements.txt /tmp/requirements.txt
 RUN pip install -r /tmp/requirements.txt
 
 # Sets the working directory for our project in the container
