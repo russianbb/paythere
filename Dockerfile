@@ -6,13 +6,13 @@ FROM python:3.7.9-slim-buster
 ENV PYTHONUNBUFFERED 1
 
 # # necessary to work the file ./wait-for to use at command for api container.
-# RUN apt-get update && apt-get install -y \
-#     gcc \
-#     git \
-#     libcurl4-openssl-dev \
-#     default-libmysqlclient-dev \
-#     libssl-dev \
-#     netcat
+RUN apt-get update && apt-get install -y \
+    gcc \
+    git \
+    libcurl4-openssl-dev \
+    default-libmysqlclient-dev \
+    libssl-dev \
+    netcat
 
 # Upgrade pip if necessary
 RUN pip install --upgrade pip
