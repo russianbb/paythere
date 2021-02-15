@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: paga_ai_mysql
+    environment:
+      - MYSQL_DATABASE=paga_ai
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_ROOT_HOST=%
+    volumes:
+      - paga-ai-mysql:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  api:
+    build:
+      context: .
+    volumes:
+      - ./:/var/task
+    ports:
+      - "8108:8108"
+    depends_on:
+      - "mysql"
+
+volumes:
+  paga-ai-mysql:
