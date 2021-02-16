@@ -8,10 +8,12 @@ backcall==0.2.0
     # via ipython
 decorator==4.4.2
     # via ipython
+ipdb==0.13.4
+    # via -r requirements-dev.in
 ipython-genutils==0.2.0
     # via traitlets
 ipython==7.20.0
-    # via -r requirements-dev.in
+    # via ipdb
 jedi==0.18.0
     # via ipython
 parso==0.8.1

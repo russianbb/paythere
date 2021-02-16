@@ -1,8 +1,7 @@
 from datetime import datetime
 
-from sqlalchemy import Column, DateTime
-
 from db import Base
+from sqlalchemy import Column, DateTime
 
 
 class BaseModel(Base):

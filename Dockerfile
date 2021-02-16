@@ -26,11 +26,11 @@ COPY ./requirements/requirements-test.txt /tmp/requirements-test.txt
 RUN pip install -r /tmp/requirements-test.txt
 
 # Install any needed packages specified in requirements.txt
-COPY ./src/requirements.txt /tmp/requirements.txt
-RUN pip install -r /tmp/requirements.txt
+COPY ./requirements/requirements-base.txt /tmp/requirements-base.txt
+RUN pip install -r /tmp/requirements-base.txt
 
 # Sets the working directory for our project in the container
 WORKDIR /var/task/
 
 # Adds our working directory to the Python path
-ENV PYTHONPATH "${PYTHONPATH}:/var/task:/var/task/paga-ai"
+ENV PYTHONPATH "${PYTHONPATH}:/var/task:/var/task/paythere"
